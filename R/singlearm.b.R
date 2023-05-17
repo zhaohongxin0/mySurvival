@@ -642,7 +642,7 @@ singlearmClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             xlab = paste0('Time (', self$options$timetypeoutput, ')'),
             # pval = TRUE,
             # pval.method	= TRUE,
-            # ylab = "Survival",
+            ylab = "Survival",
             legend = 'none',
             break.time.by = self$options$byplot,
             xlim = c(0, self$options$endplot),
@@ -653,7 +653,7 @@ singlearmClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             censor = self$options$censored
           )
 
-        plot <- plot +  theme_prism()
+        # plot <- plot +  theme_prism()
 
         print(plot)
         TRUE
