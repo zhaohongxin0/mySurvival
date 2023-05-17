@@ -653,7 +653,7 @@ singlearmClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             censor = self$options$censored
           )
 
-         plot <- plot(plot) +  theme_prism()
+         plot <- print(plot) +  theme_prism()
 
         print(plot)
         TRUE
