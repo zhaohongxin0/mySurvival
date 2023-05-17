@@ -602,7 +602,7 @@ singlearmClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
 
       # Survival Curve ----
       ,
-      .plot = function(image, ggtheme, theme, ...) {
+      .plot = function(image, ggtheme, theme,ylabel, ...) {
         sc <- self$options$sc
 
         if (!sc)
@@ -642,7 +642,7 @@ singlearmClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             xlab = paste0('Time (', self$options$timetypeoutput, ')'),
             # pval = TRUE,
             # pval.method	= TRUE,
-            # ylab = "Survival",
+            ylab = ylabel,
             legend = 'none',
             break.time.by = self$options$byplot,
             xlim = c(0, self$options$endplot),
