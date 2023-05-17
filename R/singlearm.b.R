@@ -838,7 +838,7 @@ singlearmClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             fit = km_fit,
             time_scale = time_scale,
             .xlab = paste0('Time in ', self$options$timetypeoutput),
-            ggtheme = theme_prism()
+            .theme = theme_prism()
           )
 
 
