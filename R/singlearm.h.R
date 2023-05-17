@@ -323,34 +323,34 @@ singlearmResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                 rows=0,
                 columns=list(
                     list(
-                        `name`="records", 
-                        `title`="Records", 
+                        `name`="records",
+                        `title`="Records",
                         `type`="integer"),
                     list(
-                        `name`="events", 
-                        `title`="Events", 
+                        `name`="events",
+                        `title`="Events",
                         `type`="integer"),
                     list(
-                        `name`="rmean", 
-                        `title`="rmean", 
+                        `name`="rmean",
+                        `title`="rmean",
                         `type`="number"),
                     list(
-                        `name`="se_rmean", 
-                        `title`="se_rmean", 
+                        `name`="se_rmean",
+                        `title`="se_rmean",
                         `type`="number"),
                     list(
-                        `name`="median", 
-                        `title`="Median", 
+                        `name`="median",
+                        `title`="Median",
                         `type`="number"),
                     list(
-                        `name`="x0_95lcl", 
-                        `title`="Lower", 
-                        `superTitle`="95% Confidence Interval", 
+                        `name`="x0_95lcl",
+                        `title`="Lower",
+                        `superTitle`="95% Confidence Interval",
                         `type`="number"),
                     list(
-                        `name`="x0_95ucl", 
-                        `title`="Upper", 
-                        `superTitle`="95% Confidence Interval", 
+                        `name`="x0_95ucl",
+                        `title`="Upper",
+                        `superTitle`="95% Confidence Interval",
                         `type`="number")),
                 clearWith=list(
                     "outcome",
@@ -379,33 +379,33 @@ singlearmResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                 rows=0,
                 columns=list(
                     list(
-                        `name`="time", 
-                        `title`="time", 
+                        `name`="time",
+                        `title`="time",
                         `type`="integer"),
                     list(
-                        `name`="n.risk", 
-                        `title`="Number at Risk", 
+                        `name`="n.risk",
+                        `title`="Number at Risk",
                         `type`="integer"),
                     list(
-                        `name`="n.event", 
-                        `title`="Number of Events", 
+                        `name`="n.event",
+                        `title`="Number of Events",
                         `type`="integer"),
                     list(
-                        `name`="surv", 
-                        `title`="Survival", 
-                        `type`="number", 
+                        `name`="surv",
+                        `title`="Survival",
+                        `type`="number",
                         `format`="pc"),
                     list(
-                        `name`="lower", 
-                        `title`="Lower", 
-                        `superTitle`="95% Confidence Interval", 
-                        `type`="number", 
+                        `name`="lower",
+                        `title`="Lower",
+                        `superTitle`="95% Confidence Interval",
+                        `type`="number",
                         `format`="pc"),
                     list(
-                        `name`="upper", 
-                        `title`="Upper", 
-                        `superTitle`="95% Confidence Interval", 
-                        `type`="number", 
+                        `name`="upper",
+                        `title`="Upper",
+                        `superTitle`="95% Confidence Interval",
+                        `type`="number",
                         `format`="pc")),
                 clearWith=list(
                     "outcome",
@@ -649,7 +649,8 @@ singlearm <- function(
     multievent = FALSE,
     ci95 = FALSE,
     risktable = FALSE,
-    censored = FALSE) {
+    censored = FALSE,
+    ylabel = "") {
 
     if ( ! requireNamespace("jmvcore", quietly=TRUE))
         stop("singlearm requires jmvcore to be installed (restart may be required)")

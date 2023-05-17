@@ -561,8 +561,7 @@ multisurvival <- function(
     ci95 = FALSE,
     risktable = FALSE,
     censored = FALSE,
-    pplot = TRUE,
-    ylabel = "") {
+    pplot = TRUE) {
 
     if ( ! requireNamespace("jmvcore", quietly=TRUE))
         stop("multisurvival requires jmvcore to be installed (restart may be required)")
