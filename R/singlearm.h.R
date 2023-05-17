@@ -159,7 +159,7 @@ singlearmOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                 "byplot",
                 byplot,
                 default=12)
-            private$..ylabel <- jmvcore::OptionInteger$new(
+            private$..ylabel <- jmvcore::OptionString$new(
               "ylabel",
               ylabel,
               default="Survival")
