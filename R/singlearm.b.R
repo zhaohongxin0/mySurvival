@@ -650,10 +650,11 @@ singlearmClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             subtitle = "Based on Kaplan-Meier estimates",
             risk.table = self$options$risktable,
             conf.int = self$options$ci95,
-            censor = self$options$censored
+            censor = self$options$censored,
+            ggtheme = theme_prism()
           )
 
-         plot <- print(plot) +  theme_prism()
+         # plot <- print(plot) +  theme_prism()
 
         print(plot)
         TRUE
