@@ -694,7 +694,8 @@ singlearm <- function(
         multievent = multievent,
         ci95 = ci95,
         risktable = risktable,
-        censored = censored)
+        censored = censored,
+        ylabel = ylabel)
 
     analysis <- singlearmClass$new(
         options = options,
