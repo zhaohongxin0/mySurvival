@@ -713,7 +713,8 @@ singlearmClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             fun = "event",
             risk.table = self$options$risktable,
             conf.int = self$options$ci95,
-            censored = self$options$censored
+            censored = self$options$censored,
+            ggtheme = theme_prism()
           )
 
 
@@ -774,7 +775,8 @@ singlearmClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             fun = "cumhaz",
             risk.table = self$options$risktable,
             conf.int = self$options$ci95,
-            censored = self$options$censored
+            censored = self$options$censored,
+            ggtheme = theme_prism()
           )
 
 
