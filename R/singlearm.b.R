@@ -2,7 +2,7 @@
 #' @importFrom R6 R6Class
 #' @import jmvcore
 #' @import magrittr
-#'
+#' @import ggprism
 
 singlearmClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
     "singlearmClass",
@@ -652,7 +652,7 @@ singlearmClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             censor = self$options$censored
           )
 
-        # plot <- plot + ggtheme
+        plot <- plot +  theme_prism()
 
         print(plot)
         TRUE
