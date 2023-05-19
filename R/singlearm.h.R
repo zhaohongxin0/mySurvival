@@ -32,6 +32,10 @@ singlearmOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
             ylabel2 = "Survival",
             ylabel3 = "Survival",
             ylabel6 = "Survival",
+            xlabel = "Time",
+            xlabel2 = "Time",
+            xlabel3 = "Time",
+            xlabel6 = "Time",
             multievent = FALSE,
             ci95 = FALSE,
             risktable = FALSE,
@@ -178,6 +182,22 @@ singlearmOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
               "ylabel6",
               ylabel6,
               default="Survival")
+            private$..xlabel <- jmvcore::OptionString$new(
+              "xlabel",
+              xlabel,
+              default="Time")
+            private$..xlabel2 <- jmvcore::OptionString$new(
+              "xlabel2",
+              xlabel2,
+              default="Time")
+            private$..xlabel3 <- jmvcore::OptionString$new(
+              "xlabel3",
+              xlabel3,
+              default="Time")
+            private$..xlabel6 <- jmvcore::OptionString$new(
+              "xlabel6",
+              xlabel6,
+              default="Time")
             private$..multievent <- jmvcore::OptionBool$new(
                 "multievent",
                 multievent,
@@ -223,6 +243,10 @@ singlearmOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
             self$.addOption(private$..ylabel2)
             self$.addOption(private$..ylabel3)
             self$.addOption(private$..ylabel6)
+            self$.addOption(private$..xlabel)
+            self$.addOption(private$..xlabel2)
+            self$.addOption(private$..xlabel3)
+            self$.addOption(private$..xlabel6)
             self$.addOption(private$..multievent)
             self$.addOption(private$..ci95)
             self$.addOption(private$..risktable)
@@ -257,6 +281,10 @@ singlearmOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
         ylabel2 = function() private$..ylabel2$value,
         ylabel3 = function() private$..ylabel3$value,
         ylabel6 = function() private$..ylabel6$value,
+        xlabel = function() private$..xlabel$value,
+        xlabel2 = function() private$..xlabel2$value,
+        xlabel3 = function() private$..xlabel3$value,
+        xlabel6 = function() private$..xlabel6$value,
         multievent = function() private$..multievent$value,
         ci95 = function() private$..ci95$value,
         risktable = function() private$..risktable$value,
@@ -290,6 +318,10 @@ singlearmOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
         ..ylabel2 = NA,
         ..ylabel3 = NA,
         ..ylabel6 = NA,
+        ..xlabel = NA,
+        ..xlabel2 = NA,
+        ..xlabel3 = NA,
+        ..xlabel6 = NA,
         ..multievent = NA,
         ..ci95 = NA,
         ..risktable = NA,
@@ -464,6 +496,10 @@ singlearmResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "ylabel2",
                     "ylabel3",
                     "ylabel6",
+                    "xlabel",
+                    "xlabel2",
+                    "xlabel3",
+                    "xlabel6",
                     "sas",
                     "ci95",
                     "risktable",
@@ -492,6 +528,10 @@ singlearmResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "ylabel2",
                     "ylabel3",
                     "ylabel6",
+                    "xlabel",
+                    "xlabel2",
+                    "xlabel3",
+                    "xlabel6",
                     "sas",
                     "ci95",
                     "risktable",
@@ -520,6 +560,10 @@ singlearmResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "ylabel2",
                     "ylabel3",
                     "ylabel6",
+                    "xlabel",
+                    "xlabel2",
+                    "xlabel3",
+                    "xlabel6",
                     "sas",
                     "ci95",
                     "risktable",
@@ -548,6 +592,10 @@ singlearmResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "ylabel2",
                     "ylabel3",
                     "ylabel6",
+                    "xlabel",
+                    "xlabel2",
+                    "xlabel3",
+                    "xlabel6",
                     "sas",
                     "outcome",
                     "outcomeLevel",
@@ -648,6 +696,10 @@ singlearmBase <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
 #' @param ylabel2 .
 #' @param ylabel3 .
 #' @param ylabel6 .
+#' @param xlabel .
+#' @param xlabel2 .
+#' @param xlabel3 .
+#' @param xlabel6 .
 #' @param multievent .
 #' @param ci95 .
 #' @param risktable .
@@ -705,7 +757,11 @@ singlearm <- function(
     ylabel = "Survival",
     ylabel2 = "Survival",
     ylabel3 = "Survival",
-    ylabel6 = "Survival") {
+    ylabel6 = "Survival",
+    xlabel = "Survival",
+    xlabel2 = "Survival",
+    xlabel3 = "Survival",
+    xlabel6 = "Survival") {
 
     if ( ! requireNamespace("jmvcore", quietly=TRUE))
         stop("singlearm requires jmvcore to be installed (restart may be required)")
@@ -753,7 +809,11 @@ singlearm <- function(
         ylabel = ylabel,
         ylabel2 = ylabel2,
         ylabel3 = ylabel3,
-        ylabel6 = ylabel6)
+        ylabel6 = ylabel6,
+        xlabel = xlabel,
+        xlabel2 = xlabel2,
+        xlabel3 = xlabel3,
+        xlabel6 = xlabel6)
 
     analysis <- singlearmClass$new(
         options = options,
