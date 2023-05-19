@@ -842,7 +842,7 @@ singlearmClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             fit = km_fit,
             time_scale = time_scale,
             .xlab = paste0('Time in ', self$options$timetypeoutput),
-            .ylab = ylabel6
+            .ylab = ylabel6,
             .theme = theme_prism()
           )
 
