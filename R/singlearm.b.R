@@ -706,7 +706,7 @@ singlearmClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             explanatory = myfactor,
             xlab = paste0('Time (', self$options$timetypeoutput, ')'),
             # ylab = "Cumulative Event Probability",
-            ylab = ylabel2,
+            ylab = self$options$ylabel2,
             # pval = TRUE,
             legend = 'none',
             break.time.by = self$options$byplot,
@@ -770,7 +770,7 @@ singlearmClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             explanatory = myfactor,
             xlab = paste0('Time (', self$options$timetypeoutput, ')'),
             # ylab = "Cumulative Hazard",
-            ylab = ylabel3,
+            ylab = self$options$ylabel3,
             # pval = TRUE,
             legend = 'none',
             break.time.by = self$options$byplot,
@@ -842,7 +842,7 @@ singlearmClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             fit = km_fit,
             time_scale = time_scale,
             .xlab = paste0('Time in ', self$options$timetypeoutput),
-            .ylab = ylabel6,
+            .ylab = self$options$ylabel6,
             .theme = theme_prism()
           )
 
