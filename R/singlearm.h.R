@@ -29,6 +29,9 @@ singlearmOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
             endplot = 60,
             byplot = 12,
             ylabel = "Survival",
+            ylabel2 = "Survival",
+            ylabel3 = "Survival",
+            ylabel6 = "Survival",
             multievent = FALSE,
             ci95 = FALSE,
             risktable = FALSE,
@@ -163,6 +166,18 @@ singlearmOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
               "ylabel",
               ylabel,
               default="Survival")
+            private$..ylabel2 <- jmvcore::OptionString$new(
+              "ylabel2",
+              ylabel2,
+              default="Survival")
+            private$..ylabel3 <- jmvcore::OptionString$new(
+              "ylabel3",
+              ylabel3,
+              default="Survival")
+            private$..ylabel6 <- jmvcore::OptionString$new(
+              "ylabel6",
+              ylabel6,
+              default="Survival")
             private$..multievent <- jmvcore::OptionBool$new(
                 "multievent",
                 multievent,
@@ -205,6 +220,9 @@ singlearmOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
             self$.addOption(private$..endplot)
             self$.addOption(private$..byplot)
             self$.addOption(private$..ylabel)
+            self$.addOption(private$..ylabel2)
+            self$.addOption(private$..ylabel3)
+            self$.addOption(private$..ylabel6)
             self$.addOption(private$..multievent)
             self$.addOption(private$..ci95)
             self$.addOption(private$..risktable)
@@ -236,6 +254,9 @@ singlearmOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
         endplot = function() private$..endplot$value,
         byplot = function() private$..byplot$value,
         ylabel = function() private$..ylabel$value,
+        ylabel2 = function() private$..ylabel2$value,
+        ylabel3 = function() private$..ylabel3$value,
+        ylabel6 = function() private$..ylabel6$value,
         multievent = function() private$..multievent$value,
         ci95 = function() private$..ci95$value,
         risktable = function() private$..risktable$value,
@@ -266,6 +287,9 @@ singlearmOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
         ..endplot = NA,
         ..byplot = NA,
         ..ylabel = NA,
+        ..ylabel2 = NA,
+        ..ylabel3 = NA,
+        ..ylabel6 = NA,
         ..multievent = NA,
         ..ci95 = NA,
         ..risktable = NA,
@@ -437,6 +461,9 @@ singlearmResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "endplot",
                     "byplot",
                     "ylabel",
+                    "ylabel2",
+                    "ylabel3",
+                    "ylabel6",
                     "sas",
                     "ci95",
                     "risktable",
@@ -462,6 +489,9 @@ singlearmResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "endplot",
                     "byplot",
                     "ylabel",
+                    "ylabel2",
+                    "ylabel3",
+                    "ylabel6",
                     "sas",
                     "ci95",
                     "risktable",
@@ -487,6 +517,9 @@ singlearmResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "endplot",
                     "byplot",
                     "ylabel",
+                    "ylabel2",
+                    "ylabel3",
+                    "ylabel6",
                     "sas",
                     "ci95",
                     "risktable",
@@ -512,6 +545,9 @@ singlearmResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "endplot",
                     "byplot",
                     "ylabel",
+                    "ylabel2",
+                    "ylabel3",
+                    "ylabel6",
                     "sas",
                     "outcome",
                     "outcomeLevel",
@@ -609,6 +645,9 @@ singlearmBase <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
 #' @param endplot .
 #' @param byplot .
 #' @param ylabel .
+#' @param ylabel2 .
+#' @param ylabel3 .
+#' @param ylabel6 .
 #' @param multievent .
 #' @param ci95 .
 #' @param risktable .
@@ -663,7 +702,10 @@ singlearm <- function(
     ci95 = FALSE,
     risktable = FALSE,
     censored = FALSE,
-    ylabel = "Survival") {
+    ylabel = "Survival",
+    ylabel2 = "Survival",
+    ylabel3 = "Survival",
+    ylabel6 = "Survival") {
 
     if ( ! requireNamespace("jmvcore", quietly=TRUE))
         stop("singlearm requires jmvcore to be installed (restart may be required)")
@@ -708,7 +750,10 @@ singlearm <- function(
         ci95 = ci95,
         risktable = risktable,
         censored = censored,
-        ylabel = ylabel)
+        ylabel = ylabel,
+        ylabel2 = ylabel2,
+        ylabel3 = ylabel3,
+        ylabel6 = ylabel6)
 
     analysis <- singlearmClass$new(
         options = options,

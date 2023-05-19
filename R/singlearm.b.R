@@ -602,7 +602,7 @@ singlearmClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
 
       # Survival Curve ----
       ,
-      .plot = function(image, ggtheme, theme,ylabel, ...) {
+      .plot = function(image, ggtheme, theme,ylabel,ylabel2,ylabel3,ylabel6, ...) {
         sc <- self$options$sc
 
         if (!sc)
@@ -705,7 +705,8 @@ singlearmClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             dependent = myformula,
             explanatory = myfactor,
             xlab = paste0('Time (', self$options$timetypeoutput, ')'),
-            ylab = "Cumulative Event Probability",
+            # ylab = "Cumulative Event Probability",
+            ylab = ylabel2,
             # pval = TRUE,
             legend = 'none',
             break.time.by = self$options$byplot,
@@ -768,7 +769,8 @@ singlearmClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             dependent = myformula,
             explanatory = myfactor,
             xlab = paste0('Time (', self$options$timetypeoutput, ')'),
-            ylab = "Cumulative Hazard",
+            # ylab = "Cumulative Hazard",
+            ylab = ylabel3,
             # pval = TRUE,
             legend = 'none',
             break.time.by = self$options$byplot,
@@ -840,6 +842,7 @@ singlearmClass <- if (requireNamespace('jmvcore', quietly=TRUE)) R6::R6Class(
             fit = km_fit,
             time_scale = time_scale,
             .xlab = paste0('Time in ', self$options$timetypeoutput),
+            .ylab = ylabel6
             .theme = theme_prism()
           )
 
