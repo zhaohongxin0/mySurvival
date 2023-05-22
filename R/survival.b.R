@@ -1178,6 +1178,7 @@ survivalClass <- if (requireNamespace('jmvcore'))
                         .ylab = self$options$ylabel6,
                         .xlab = self$options$xlabel6,
                         .alpha = 0,
+                        .size = 2,
                         .theme = theme_prism()
                     )
 
