@@ -1098,7 +1098,7 @@ survivalClass <- if (requireNamespace('jmvcore'))
                         pval = self$options$pplot,
                         pval.method	= self$options$pplot,
                         pval.method.coord = c(0,1),
-                        pval.coord = c(0,0.9),
+                        pval.coord = c(0,0.93),
                         pval.size = 4,
                         pval.method.size = 4,
                         legend = 'right',
