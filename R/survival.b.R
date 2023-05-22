@@ -952,7 +952,7 @@ survivalClass <- if (requireNamespace('jmvcore'))
                         xlab = self$options$xlabel,
                         pval = self$options$pplot,
                         pval.method	= self$options$pplot,
-                        pval.method.coord = c(0.07,0),
+                        pval.method.coord = c(0.00,0.07),
                         pval.coord = c(0,0),
                         pval.size = 4,
                         pval.method.size = 4,
