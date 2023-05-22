@@ -31,6 +31,14 @@ survivalOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
             ch = FALSE,
             endplot = 60,
             byplot = 12,
+            ylabel = "Survival",
+            ylabel2 = "Survival",
+            ylabel3 = "Survival",
+            ylabel6 = "Survival",
+            xlabel = "Time",
+            xlabel2 = "Time",
+            xlabel3 = "Time",
+            xlabel6 = "Time",
             multievent = FALSE,
             ci95 = FALSE,
             risktable = FALSE,
@@ -188,6 +196,38 @@ survivalOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                 "byplot",
                 byplot,
                 default=12)
+            private$..ylabel <- jmvcore::OptionString$new(
+              "ylabel",
+              ylabel,
+              default="Survival")
+            private$..ylabel2 <- jmvcore::OptionString$new(
+              "ylabel2",
+              ylabel2,
+              default="Survival")
+            private$..ylabel3 <- jmvcore::OptionString$new(
+              "ylabel3",
+              ylabel3,
+              default="Survival")
+            private$..ylabel6 <- jmvcore::OptionString$new(
+              "ylabel6",
+              ylabel6,
+              default="Survival")
+            private$..xlabel <- jmvcore::OptionString$new(
+              "xlabel",
+              xlabel,
+              default="Time")
+            private$..xlabel2 <- jmvcore::OptionString$new(
+              "xlabel2",
+              xlabel2,
+              default="Time")
+            private$..xlabel3 <- jmvcore::OptionString$new(
+              "xlabel3",
+              xlabel3,
+              default="Time")
+            private$..xlabel6 <- jmvcore::OptionString$new(
+              "xlabel6",
+              xlabel6,
+              default="Time")
             private$..multievent <- jmvcore::OptionBool$new(
                 "multievent",
                 multievent,
@@ -240,6 +280,14 @@ survivalOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
             self$.addOption(private$..ch)
             self$.addOption(private$..endplot)
             self$.addOption(private$..byplot)
+            self$.addOption(private$..ylabel)
+            self$.addOption(private$..ylabel2)
+            self$.addOption(private$..ylabel3)
+            self$.addOption(private$..ylabel6)
+            self$.addOption(private$..xlabel)
+            self$.addOption(private$..xlabel2)
+            self$.addOption(private$..xlabel3)
+            self$.addOption(private$..xlabel6)
             self$.addOption(private$..multievent)
             self$.addOption(private$..ci95)
             self$.addOption(private$..risktable)
@@ -275,6 +323,14 @@ survivalOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
         ch = function() private$..ch$value,
         endplot = function() private$..endplot$value,
         byplot = function() private$..byplot$value,
+        ylabel = function() private$..ylabel$value,
+        ylabel2 = function() private$..ylabel2$value,
+        ylabel3 = function() private$..ylabel3$value,
+        ylabel6 = function() private$..ylabel6$value,
+        xlabel = function() private$..xlabel$value,
+        xlabel2 = function() private$..xlabel2$value,
+        xlabel3 = function() private$..xlabel3$value,
+        xlabel6 = function() private$..xlabel6$value,
         multievent = function() private$..multievent$value,
         ci95 = function() private$..ci95$value,
         risktable = function() private$..risktable$value,
@@ -309,6 +365,14 @@ survivalOptions <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
         ..ch = NA,
         ..endplot = NA,
         ..byplot = NA,
+        ..ylabel = NA,
+        ..ylabel2 = NA,
+        ..ylabel3 = NA,
+        ..ylabel6 = NA,
+        ..xlabel = NA,
+        ..xlabel2 = NA,
+        ..xlabel3 = NA,
+        ..xlabel6 = NA,
         ..multievent = NA,
         ..ci95 = NA,
         ..risktable = NA,
@@ -391,39 +455,39 @@ survivalResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                 rows=0,
                 columns=list(
                     list(
-                        `name`="factor", 
-                        `title`="Levels", 
+                        `name`="factor",
+                        `title`="Levels",
                         `type`="text"),
                     list(
-                        `name`="records", 
-                        `title`="Records", 
+                        `name`="records",
+                        `title`="Records",
                         `type`="integer"),
                     list(
-                        `name`="events", 
-                        `title`="Events", 
+                        `name`="events",
+                        `title`="Events",
                         `type`="integer"),
                     list(
-                        `name`="rmean", 
-                        `title`="rmean", 
+                        `name`="rmean",
+                        `title`="rmean",
                         `type`="number"),
                     list(
-                        `name`="se_rmean", 
-                        `title`="se_rmean", 
+                        `name`="se_rmean",
+                        `title`="se_rmean",
                         `type`="number"),
                     list(
-                        `name`="median", 
-                        `title`="Median", 
+                        `name`="median",
+                        `title`="Median",
                         `type`="number"),
                     list(
-                        `name`="x0_95lcl", 
-                        `title`="Lower", 
-                        `superTitle`="95% Confidence Interval", 
+                        `name`="x0_95lcl",
+                        `title`="Lower",
+                        `superTitle`="95% Confidence Interval",
                         `type`="number"),
                     list(
-                        `name`="x0_95ucl", 
-                        `title`="Upper", 
-                        `superTitle`="95% Confidence Interval", 
-                        `type`="number", 
+                        `name`="x0_95ucl",
+                        `title`="Upper",
+                        `superTitle`="95% Confidence Interval",
+                        `type`="number",
                         `visible`="(!sas)")),
                 clearWith=list(
                     "explanatory",
@@ -455,21 +519,21 @@ survivalResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                 rows=0,
                 columns=list(
                     list(
-                        `name`="Explanatory", 
-                        `title`="Explanatory", 
+                        `name`="Explanatory",
+                        `title`="Explanatory",
                         `type`="text"),
                     list(
-                        `name`="Levels", 
-                        `title`="Levels", 
+                        `name`="Levels",
+                        `title`="Levels",
                         `type`="text"),
                     list(
-                        `name`="all", 
-                        `title`="all", 
+                        `name`="all",
+                        `title`="all",
                         `type`="text"),
                     list(
-                        `name`="HR_univariable", 
-                        `title`="HR (Univariable)", 
-                        `type`="text", 
+                        `name`="HR_univariable",
+                        `title`="HR (Univariable)",
+                        `type`="text",
                         `visible`="(!sas)")),
                 clearWith=list(
                     "explanatory",
@@ -517,37 +581,37 @@ survivalResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                 rows=0,
                 columns=list(
                     list(
-                        `name`="strata", 
-                        `title`="Levels", 
+                        `name`="strata",
+                        `title`="Levels",
                         `type`="text"),
                     list(
-                        `name`="time", 
-                        `title`="time", 
+                        `name`="time",
+                        `title`="time",
                         `type`="integer"),
                     list(
-                        `name`="n.risk", 
-                        `title`="Number at Risk", 
+                        `name`="n.risk",
+                        `title`="Number at Risk",
                         `type`="integer"),
                     list(
-                        `name`="n.event", 
-                        `title`="Number of Events", 
+                        `name`="n.event",
+                        `title`="Number of Events",
                         `type`="integer"),
                     list(
-                        `name`="surv", 
-                        `title`="Survival", 
-                        `type`="number", 
+                        `name`="surv",
+                        `title`="Survival",
+                        `type`="number",
                         `format`="pc"),
                     list(
-                        `name`="lower", 
-                        `title`="Lower", 
-                        `superTitle`="95% Confidence Interval", 
-                        `type`="number", 
+                        `name`="lower",
+                        `title`="Lower",
+                        `superTitle`="95% Confidence Interval",
+                        `type`="number",
                         `format`="pc"),
                     list(
-                        `name`="upper", 
-                        `title`="Upper", 
-                        `superTitle`="95% Confidence Interval", 
-                        `type`="number", 
+                        `name`="upper",
+                        `title`="Upper",
+                        `superTitle`="95% Confidence Interval",
+                        `type`="number",
                         `format`="pc")),
                 visible="(!sas)",
                 clearWith=list(
@@ -581,17 +645,17 @@ survivalResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                 rows=0,
                 columns=list(
                     list(
-                        `name`="rowname", 
-                        `title`="Levels", 
+                        `name`="rowname",
+                        `title`="Levels",
                         `type`="text"),
                     list(
-                        `name`="name", 
-                        `title`="Levels", 
+                        `name`="name",
+                        `title`="Levels",
                         `type`="text"),
                     list(
-                        `name`="value", 
-                        `title`="p-value", 
-                        `type`="number", 
+                        `name`="value",
+                        `title`="p-value",
+                        `type`="number",
                         `format`="zto,pvalue")),
                 visible="(pw && !sas)",
                 clearWith=list(
@@ -619,6 +683,14 @@ survivalResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "sc",
                     "endplot",
                     "byplot",
+                    "ylabel",
+                    "ylabel2",
+                    "ylabel3",
+                    "ylabel6",
+                    "xlabel",
+                    "xlabel2",
+                    "xlabel3",
+                    "xlabel6",
                     "sas",
                     "ci95",
                     "risktable",
@@ -645,6 +717,14 @@ survivalResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "ce",
                     "endplot",
                     "byplot",
+                    "ylabel",
+                    "ylabel2",
+                    "ylabel3",
+                    "ylabel6",
+                    "xlabel",
+                    "xlabel2",
+                    "xlabel3",
+                    "xlabel6",
                     "sas",
                     "ci95",
                     "risktable",
@@ -670,6 +750,14 @@ survivalResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "ch",
                     "endplot",
                     "byplot",
+                    "ylabel",
+                    "ylabel2",
+                    "ylabel3",
+                    "ylabel6",
+                    "xlabel",
+                    "xlabel2",
+                    "xlabel3",
+                    "xlabel6",
                     "sas",
                     "ci95",
                     "risktable",
@@ -695,6 +783,14 @@ survivalResults <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
                     "kmunicate",
                     "endplot",
                     "byplot",
+                    "ylabel",
+                    "ylabel2",
+                    "ylabel3",
+                    "ylabel6",
+                    "xlabel",
+                    "xlabel2",
+                    "xlabel3",
+                    "xlabel6",
                     "sas",
                     "explanatory",
                     "outcome",
@@ -796,6 +892,14 @@ survivalBase <- if (requireNamespace("jmvcore", quietly=TRUE)) R6::R6Class(
 #' @param ch .
 #' @param endplot .
 #' @param byplot .
+#' @param ylabel .
+#' @param ylabel2 .
+#' @param ylabel3 .
+#' @param ylabel6 .
+#' @param xlabel .
+#' @param xlabel2 .
+#' @param xlabel3 .
+#' @param xlabel6 .
 #' @param multievent .
 #' @param ci95 .
 #' @param risktable .
@@ -862,7 +966,15 @@ survival <- function(
     risktable = FALSE,
     censored = FALSE,
     pplot = TRUE,
-    sas = FALSE) {
+    sas = FALSE,
+    ylabel = "Survival",
+    ylabel2 = "Survival",
+    ylabel3 = "Survival",
+    ylabel6 = "Survival",
+    xlabel = "Survival",
+    xlabel2 = "Survival",
+    xlabel3 = "Survival",
+    xlabel6 = "Survival") {
 
     if ( ! requireNamespace("jmvcore", quietly=TRUE))
         stop("survival requires jmvcore to be installed (restart may be required)")
@@ -914,7 +1026,15 @@ survival <- function(
         risktable = risktable,
         censored = censored,
         pplot = pplot,
-        sas = sas)
+        sas = sas,
+        ylabel = ylabel,
+        ylabel2 = ylabel2,
+        ylabel3 = ylabel3,
+        ylabel6 = ylabel6,
+        xlabel = xlabel,
+        xlabel2 = xlabel2,
+        xlabel3 = xlabel3,
+        xlabel6 = xlabel6)
 
     analysis <- survivalClass$new(
         options = options,

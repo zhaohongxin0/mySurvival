@@ -947,7 +947,9 @@ survivalClass <- if (requireNamespace('jmvcore'))
                         .data = .,
                         dependent = myformula,
                         explanatory = myfactor,
-                        xlab = paste0('Time (', self$options$timetypeoutput, ')'),
+                        # xlab = paste0('Time (', self$options$timetypeoutput, ')'),
+                        ylab = self$options$ylabel,
+                        xlab = self$options$xlabel,
                         pval = self$options$pplot,
                         pval.method	= self$options$pplot,
                         legend = 'none',
@@ -957,7 +959,8 @@ survivalClass <- if (requireNamespace('jmvcore'))
                         subtitle = "Based on Kaplan-Meier estimates",
                         risk.table = self$options$risktable,
                         conf.int = self$options$ci95,
-                        censor = self$options$censored
+                        censor = self$options$censored,
+                        ggtheme = theme_prism()
                     )
 
                 # plot <- plot + ggtheme
@@ -1015,7 +1018,9 @@ survivalClass <- if (requireNamespace('jmvcore'))
                         .data = .,
                         dependent = myformula,
                         explanatory = myfactor,
-                        xlab = paste0('Time (', self$options$timetypeoutput, ')'),
+                        # xlab = paste0('Time (', self$options$timetypeoutput, ')'),
+                        xlab = self$options$xlabel2,
+                        ylab = self$options$ylabel2,
                         pval = self$options$pplot,
                         pval.method	= self$options$pplot,
                         legend = 'none',
@@ -1025,7 +1030,8 @@ survivalClass <- if (requireNamespace('jmvcore'))
                         fun = "event",
                         risk.table = self$options$risktable,
                         conf.int = self$options$ci95,
-                        censored = self$options$censored
+                        censored = self$options$censored,
+                        ggtheme = theme_prism()
                     )
 
 
@@ -1082,7 +1088,9 @@ survivalClass <- if (requireNamespace('jmvcore'))
                         .data = .,
                         dependent = myformula,
                         explanatory = myfactor,
-                        xlab = paste0('Time (', self$options$timetypeoutput, ')'),
+                        # xlab = paste0('Time (', self$options$timetypeoutput, ')'),
+                        ylab = self$options$ylabel3,
+                        xlab = self$options$xlabel3,
                         pval = self$options$pplot,
                         pval.method	= self$options$pplot,
                         legend = 'none',
@@ -1092,7 +1100,8 @@ survivalClass <- if (requireNamespace('jmvcore'))
                         fun = "cumhaz",
                         risk.table = self$options$risktable,
                         conf.int = self$options$ci95,
-                        censored = self$options$censored
+                        censored = self$options$censored,
+                        ggtheme = theme_prism()
                     )
 
 
@@ -1159,7 +1168,10 @@ survivalClass <- if (requireNamespace('jmvcore'))
                     KMunicate::KMunicate(
                         fit = km_fit,
                         time_scale = time_scale,
-                        .xlab = paste0('Time in ', self$options$timetypeoutput)
+                        # .xlab = paste0('Time in ', self$options$timetypeoutput),
+                        .ylab = self$options$ylabel6,
+                        .xlab = self$options$xlabel6,
+                        .theme = theme_prism()
                     )
 
 
