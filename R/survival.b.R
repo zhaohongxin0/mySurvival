@@ -1025,7 +1025,7 @@ survivalClass <- if (requireNamespace('jmvcore'))
                         ylab = self$options$ylabel2,
                         pval = self$options$pplot,
                         pval.method	= self$options$pplot,
-                        legend = 'top',
+                        legend = 'right',
                         break.time.by = self$options$byplot,
                         xlim = c(0, self$options$endplot),
                         title = paste0("Cumulative Events ", title2),
@@ -1034,6 +1034,7 @@ survivalClass <- if (requireNamespace('jmvcore'))
                         risk.table.fontsize=3,
                         conf.int = self$options$ci95,
                         censor = self$options$censored,
+                        risk.table.y.text=F,
                         ggtheme = theme_prism()
                     )
 
@@ -1096,13 +1097,14 @@ survivalClass <- if (requireNamespace('jmvcore'))
                         xlab = self$options$xlabel3,
                         pval = self$options$pplot,
                         pval.method	= self$options$pplot,
-                        legend = 'none',
+                        legend = 'right',
                         break.time.by = self$options$byplot,
                         xlim = c(0, self$options$endplot),
                         title = paste0("Cumulative Hazard ", title2),
                         fun = "cumhaz",
                         risk.table = self$options$risktable,
-                        risk.table.fontsize=5,
+                        risk.table.fontsize=4,
+                        risk.table.y.text=F,
                         conf.int = self$options$ci95,
                         censor = self$options$censored,
                         ggtheme = theme_prism()
@@ -1175,6 +1177,7 @@ survivalClass <- if (requireNamespace('jmvcore'))
                         # .xlab = paste0('Time in ', self$options$timetypeoutput),
                         .ylab = self$options$ylabel6,
                         .xlab = self$options$xlabel6,
+                        .alpha = 0,
                         .theme = theme_prism()
                     )
 
