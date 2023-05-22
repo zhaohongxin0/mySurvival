@@ -1031,7 +1031,7 @@ survivalClass <- if (requireNamespace('jmvcore'))
                         title = paste0("Cumulative Events ", title2),
                         fun = "event",
                         risk.table = self$options$risktable,
-                        risk.table.fontsize=3,
+                        risk.table.fontsize=4,
                         conf.int = self$options$ci95,
                         censor = self$options$censored,
                         risk.table.y.text=F,
@@ -1178,7 +1178,7 @@ survivalClass <- if (requireNamespace('jmvcore'))
                         .ylab = self$options$ylabel6,
                         .xlab = self$options$xlabel6,
                         .alpha = 0,
-                        .size = 2,
+                        .size = 1,
                         .theme = theme_prism()
                     )
 
