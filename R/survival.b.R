@@ -1097,6 +1097,7 @@ survivalClass <- if (requireNamespace('jmvcore'))
                         xlab = self$options$xlabel3,
                         pval = self$options$pplot,
                         pval.method	= self$options$pplot,
+                        pval.coord = c(0,1),
                         legend = 'right',
                         break.time.by = self$options$byplot,
                         xlim = c(0, self$options$endplot),
