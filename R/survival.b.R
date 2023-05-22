@@ -958,6 +958,7 @@ survivalClass <- if (requireNamespace('jmvcore'))
                         title = paste0("Survival curves for ", title2),
                         subtitle = "Based on Kaplan-Meier estimates",
                         risk.table = self$options$risktable,
+                        risk.table.fontsize=4,
                         conf.int = self$options$ci95,
                         censor = self$options$censored,
                         risk.table.y.text=F,
@@ -1101,6 +1102,7 @@ survivalClass <- if (requireNamespace('jmvcore'))
                         title = paste0("Cumulative Hazard ", title2),
                         fun = "cumhaz",
                         risk.table = self$options$risktable,
+                        risk.table.fontsize=5,
                         conf.int = self$options$ci95,
                         censor = self$options$censored,
                         ggtheme = theme_prism()
