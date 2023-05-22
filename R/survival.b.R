@@ -1179,7 +1179,7 @@ survivalClass <- if (requireNamespace('jmvcore'))
                         .xlab = self$options$xlabel6,
                         .alpha = 0,
                         .size = 1,
-                        .legend_position = c(1.5,1),
+                        .legend_position = "right",
                         .theme = theme_prism()
                     )
 
