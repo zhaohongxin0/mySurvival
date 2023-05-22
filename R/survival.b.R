@@ -960,6 +960,7 @@ survivalClass <- if (requireNamespace('jmvcore'))
                         risk.table = self$options$risktable,
                         conf.int = self$options$ci95,
                         censor = self$options$censored,
+                        risk.table.y.text=F,
                         ggtheme = theme_prism()
                     )
 
@@ -1030,7 +1031,7 @@ survivalClass <- if (requireNamespace('jmvcore'))
                         fun = "event",
                         risk.table = self$options$risktable,
                         conf.int = self$options$ci95,
-                        censored = self$options$censored,
+                        censor = self$options$censored,
                         ggtheme = theme_prism()
                     )
 
@@ -1100,7 +1101,7 @@ survivalClass <- if (requireNamespace('jmvcore'))
                         fun = "cumhaz",
                         risk.table = self$options$risktable,
                         conf.int = self$options$ci95,
-                        censored = self$options$censored,
+                        censor = self$options$censored,
                         ggtheme = theme_prism()
                     )
 
